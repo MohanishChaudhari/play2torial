@@ -20,9 +20,14 @@ public class Application extends Controller {
 
     public static Result addTask() {
         Form<Task> form = form(Task.class).bindFromRequest();
-        Task task = form.get();
-        task.save();
-        return redirect(routes.Application.index());
+        if (form.hasErrors()) {
+            return badRequest(index.render("hello, world", form));
+        }
+        else {
+            Task task = form.get();
+            task.save();
+            return redirect(routes.Application.index());
+        }
     }
 
     public static Result getTasks() {
