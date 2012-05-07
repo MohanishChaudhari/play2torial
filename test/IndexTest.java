@@ -6,11 +6,11 @@ import static play.test.Helpers.*;
 
 public class IndexTest {
 
-  @Test
-  public void indexTemplate() {
-      Content html = views.html.index.render("test");
-      assertThat(contentType(html)).isEqualTo("text/html");
-      assertThat(contentAsString(html)).contains("TEST");
-  }
+    @Test
+    public void indexTemplate() {
+        Content html = views.html.index.render("test");
+        assertThat(contentType(html)).isEqualTo("text/html");
+        assertThat(contentAsString(html)).contains("TEST");
+    }
 
 }
