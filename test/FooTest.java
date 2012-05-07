@@ -6,10 +6,10 @@ import static org.fest.assertions.Assertions.*;
 
 public class FooTest {
 
-  @Test
-  public void testFooRoute() {
-    Result result = routeAndCall(fakeRequest(GET, "/foo"));
-    assertThat(result).isNotNull();
-  }
+    @Test
+    public void testFooRoute() {
+        Result result = routeAndCall(fakeRequest(GET, "/foo"));
+        assertThat(result).isNotNull();
+    }
 
 }
