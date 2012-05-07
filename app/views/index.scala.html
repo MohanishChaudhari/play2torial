@@ -2,13 +2,13 @@
 
 @main("Welcome to Play 2.0") {
 
-  @message.toUpperCase
+    @message.toUpperCase
 
-  <ul id="tasks"></ul>
-   
-  @helper.form(action = routes.Application.addTask()) {
-    <input name="contents"/>
-    <input type="submit"/>
-  }
-    
+    <ul id="tasks"></ul>
+
+    @helper.form(action = routes.Application.addTask()) {
+        <input name="contents"/>
+        <input type="submit"/>
+    }
+
 }
