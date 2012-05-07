@@ -15,14 +15,23 @@ import static play.libs.Json.toJson;
 public class Application extends Controller {
   
   public static Result index() {
-    return ok(index.render("hello, world"));
+    return redirect(routes.Application.getTaskForm());
+  }
+
+  public static Result getTaskForm() {
+    return ok(index.render("hello, world", form(Task.class)));
   }
 
   public static Result addTask() {
     Form<Task> form = form(Task.class).bindFromRequest();
-    Task task = form.get();
-    task.save();
-    return redirect(routes.Application.index());
+    if (form.hasErrors()) {
+      return badRequest(index.render("hello, world", form));
+    }
+    else {
+      Task task = form.get();
+      task.save();
+      return redirect(routes.Application.index());
+    }
   }
 
   public static Result getTasks() {
