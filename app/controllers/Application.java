@@ -15,10 +15,6 @@ import static play.libs.Json.toJson;
 public class Application extends Controller {
   
   public static Result index() {
-    return redirect(routes.Application.getTaskForm());
-  }
-
-  public static Result getTaskForm() {
     return ok(index.render("hello, world", form(Task.class)));
   }
 
