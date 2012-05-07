@@ -15,7 +15,7 @@ import static play.libs.Json.toJson;
 public class Application extends Controller {
   
   public static Result index() {
-    return ok(index.render("hello, world"));
+    return ok(index.render("hello, world", form(Task.class)));
   }
 
   public static Result addTask() {
